@@ -9,7 +9,7 @@ package examen2_felipelin;
  *
  * @author felipelinzhao
  */
-public class Pantalla {
+public class Pantalla extends Partes {
 
     private String tactil;
     private String tipo;
@@ -21,6 +21,14 @@ public class Pantalla {
         this.tactil = tactil;
         this.tipo = tipo;
     }
+
+    public Pantalla(String tactil, String tipo, int time) {
+        super(time);
+        this.tactil = tactil;
+        this.tipo = tipo;
+    }
+
+    
 
     public String getTactil() {
         return tactil;

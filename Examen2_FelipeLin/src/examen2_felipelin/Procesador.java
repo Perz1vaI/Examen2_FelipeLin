@@ -9,7 +9,7 @@ package examen2_felipelin;
  *
  * @author felipelinzhao
  */
-public class Procesador {
+public class Procesador extends Partes{
     
     private int nucleos;
     private double velocidad;
@@ -21,6 +21,14 @@ public class Procesador {
         this.nucleos = nucleos;
         this.velocidad = velocidad;
     }
+
+    public Procesador(int nucleos, double velocidad, int time) {
+        super(time);
+        this.nucleos = nucleos;
+        this.velocidad = velocidad;
+    }
+
+    
 
     public int getNucleos() {
         return nucleos;

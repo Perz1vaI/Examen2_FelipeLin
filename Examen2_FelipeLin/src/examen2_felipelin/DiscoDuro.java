@@ -9,7 +9,7 @@ package examen2_felipelin;
  *
  * @author felipelinzhao
  */
-public class DiscoDuro {
+public class DiscoDuro extends Partes {
 
     private String marca;
     private double size;
@@ -22,6 +22,13 @@ public class DiscoDuro {
         this.size = size;
     }
 
+    public DiscoDuro(String marca, double size, int time) {
+        super(time);
+        this.marca = marca;
+        this.size = size;
+    }
+
+    
     public String getMarca() {
         return marca;
     }

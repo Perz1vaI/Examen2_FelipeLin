@@ -9,7 +9,7 @@ package examen2_felipelin;
  *
  * @author felipelinzhao
  */
-public class RAM {
+public class RAM extends Partes{
     
     private double size;
     private String marca;
@@ -21,6 +21,14 @@ public class RAM {
         this.size = size;
         this.marca = marca;
     }
+
+    public RAM(double size, String marca, int time) {
+        super(time);
+        this.size = size;
+        this.marca = marca;
+    }
+
+    
 
     public double getSize() {
         return size;

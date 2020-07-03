@@ -11,7 +11,7 @@ import java.awt.Color;
  *
  * @author felipelinzhao
  */
-public class Teclado {
+public class Teclado extends Partes {
 
     private String material;
     private String color;
@@ -20,6 +20,12 @@ public class Teclado {
     }
 
     public Teclado(String material, String color) {
+        this.material = material;
+        this.color = color;
+    }
+
+    public Teclado(String material, String color, int time) {
+        super(time);
         this.material = material;
         this.color = color;
     }

@@ -9,7 +9,7 @@ package examen2_felipelin;
  *
  * @author felipelinzhao
  */
-public class Bateria {
+public class Bateria extends Partes{
 
     private double horas;
     private String material;
@@ -21,6 +21,14 @@ public class Bateria {
         this.horas = horas;
         this.material = material;
     }
+
+    public Bateria(double horas, String material, int time) {
+        super(time);
+        this.horas = horas;
+        this.material = material;
+    }
+
+   
 
     public double getHoras() {
         return horas;
