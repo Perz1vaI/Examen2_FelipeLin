@@ -17,38 +17,38 @@ import java.util.Scanner;
  * @author felipelinzhao
  */
 public class AdminTecnico {
-    
+
     private ArrayList<Tecnicos> lista = new ArrayList();
     private File archivo = null;
-    
+
     public AdminTecnico() {
     }
-    
+
     public AdminTecnico(String path) {
         archivo = new File(path);
-        
+
     }
-    
+
     public ArrayList<Tecnicos> getLista() {
         return lista;
     }
-    
+
     public void setLista(ArrayList<Tecnicos> lista) {
         this.lista = lista;
     }
-    
+
     public File getArchivo() {
         return archivo;
     }
-    
+
     public void setArchivo(File archivo) {
         this.archivo = archivo;
     }
-    
+
     public void setTecnicos(Tecnicos p) {
         this.lista.add(p);
     }
-    
+
     public void escribirArchivo() throws IOException {
         FileWriter fw = null;
         BufferedWriter bw = null;
@@ -56,10 +56,10 @@ public class AdminTecnico {
             fw = new FileWriter(archivo, false);
             bw = new BufferedWriter(fw);
             for (Tecnicos t : lista) {
-                bw.write(t.getNombre() + ",");
-                bw.write(t.getEdad() + ",");
-                bw.write(t.getGenero() + ",");
-                bw.write(t.getCantidad_compu() + ",");
+                bw.write(t.getEdad() + ";");
+                bw.write(t.getNombre() + ";");
+                bw.write(t.getGenero() + ";");
+                bw.write(t.getCantidad_compu() + ";");
             }
             bw.flush();
         } catch (Exception ex) {
@@ -67,17 +67,17 @@ public class AdminTecnico {
         bw.close();
         fw.close();
     }
-    
+
     public void cargarArchivo() {
         Scanner sc = null;
         lista = new ArrayList();
         if (archivo.exists()) {
             try {
                 sc = new Scanner(archivo);
-                sc.useDelimiter(",");
+                sc.useDelimiter(";");
                 while (sc.hasNext()) {
-                    lista.add(new Tecnicos(sc.nextInt(), sc.next(), sc.next()));
-                    
+                    lista.add(new Tecnicos(sc.nextInt(), sc.next(), sc.next(), sc.nextInt()));
+
                 }
             } catch (Exception ex) {
             }

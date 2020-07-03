@@ -9,6 +9,7 @@ import java.awt.Color;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 
 /**
@@ -36,6 +37,7 @@ public class Main extends javax.swing.JFrame {
     private void initComponents() {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
+        ventana_ensamblar = new javax.swing.JDialog();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
@@ -78,9 +80,9 @@ public class Main extends javax.swing.JFrame {
         comp_tam_dd = new javax.swing.JSpinner();
         comp_velo = new javax.swing.JSpinner();
         comp_nucleos = new javax.swing.JSpinner();
-        jButton1 = new javax.swing.JButton();
         comp_material = new javax.swing.JTextField();
         jLabel26 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         jLabel27 = new javax.swing.JLabel();
         time_bate = new javax.swing.JTextField();
         jLabel28 = new javax.swing.JLabel();
@@ -109,6 +111,24 @@ public class Main extends javax.swing.JFrame {
         elim_tecni = new javax.swing.JButton();
         elim_com = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
+        jLabel33 = new javax.swing.JLabel();
+        jLabel34 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        lista_comp = new javax.swing.JList<>();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        lista_tecnicos = new javax.swing.JList<>();
+        jButton3 = new javax.swing.JButton();
+
+        javax.swing.GroupLayout ventana_ensamblarLayout = new javax.swing.GroupLayout(ventana_ensamblar.getContentPane());
+        ventana_ensamblar.getContentPane().setLayout(ventana_ensamblarLayout);
+        ventana_ensamblarLayout.setHorizontalGroup(
+            ventana_ensamblarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        ventana_ensamblarLayout.setVerticalGroup(
+            ventana_ensamblarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -118,6 +138,12 @@ public class Main extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Administrador y ensamblaje de computadoras DELL");
+
+        jTabbedPane1.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                jTabbedPane1StateChanged(evt);
+            }
+        });
 
         jPanel2.setBackground(new java.awt.Color(204, 204, 204));
         jPanel2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
@@ -224,6 +250,10 @@ public class Main extends javax.swing.JFrame {
 
         comp_nucleos.setModel(new javax.swing.SpinnerNumberModel(1, 1, 100, 1));
         jPanel4.add(comp_nucleos, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 240, 70, -1));
+        jPanel4.add(comp_material, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 150, 103, -1));
+
+        jLabel26.setText("Material");
+        jPanel4.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 80, 24));
 
         jButton1.setText("Crear");
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -232,10 +262,6 @@ public class Main extends javax.swing.JFrame {
             }
         });
         jPanel4.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 480, 138, 46));
-        jPanel4.add(comp_material, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 150, 103, -1));
-
-        jLabel26.setText("Material");
-        jPanel4.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 80, 24));
 
         jLabel27.setText("Tiempo de ensamble");
         jPanel4.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 140, -1, -1));
@@ -429,15 +455,60 @@ public class Main extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Crear, Modificar Y Eliminar", jPanel2);
 
+        jLabel33.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel33.setText("Computadoras");
+
+        jLabel34.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel34.setText("Tecnicos");
+
+        lista_comp.setModel(new DefaultListModel());
+        jScrollPane1.setViewportView(lista_comp);
+
+        lista_tecnicos.setModel(new DefaultListModel());
+        jScrollPane2.setViewportView(lista_tecnicos);
+
+        jButton3.setText("Ensamblar");
+        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton3MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 803, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(101, 101, 101)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 221, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(101, 101, 101))
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(142, 142, 142)
+                .addComponent(jLabel33)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel34, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(149, 149, 149))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(326, 326, 326))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 596, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(34, 34, 34)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel34, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(37, 37, 37)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(47, 47, 47)
+                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(101, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Ensamblar", jPanel3);
@@ -453,7 +524,7 @@ public class Main extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(47, 47, 47)
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 808, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(62, Short.MAX_VALUE))
+                .addContainerGap(56, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -528,7 +599,7 @@ public class Main extends javax.swing.JFrame {
 
         Computadora x = new Computadora(serie, year, color, material, ram, dd, bat, tec, pant, proc);
         ac.cargarArchivo();
-        ac.setComputadora(x);
+        ac.getLista().add(x);
         ac.escribirArchivo();
 
         JOptionPane.showMessageDialog(this, "Computadora creado exitosamente");
@@ -559,6 +630,7 @@ public class Main extends javax.swing.JFrame {
 
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
         try {
+            AdminTecnico at = new AdminTecnico("./Tecnicos.txt");
             String nombre, genero;
             int edad;
             nombre = nombre_t.getText();
@@ -568,10 +640,9 @@ public class Main extends javax.swing.JFrame {
             } else {
                 genero = "Femenino";
             }
-            Tecnicos x = new Tecnicos(edad, nombre, genero);
-            AdminTecnico at = new AdminTecnico("./Tecnicos.txt");
+            Tecnicos x = new Tecnicos(edad, nombre, genero, 0);
             at.cargarArchivo();
-            at.setTecnicos(x);
+            at.getLista().add(x);
             at.escribirArchivo();
 
             JOptionPane.showMessageDialog(this, "Agregado con exito un tecnico");
@@ -856,6 +927,45 @@ public class Main extends javax.swing.JFrame {
 
     }//GEN-LAST:event_elim_tecniMouseClicked
 
+    private void jTabbedPane1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jTabbedPane1StateChanged
+        // TODO add your handling code here:
+        if (jTabbedPane1.getSelectedIndex() == 1) {
+            AdminTecnico at = new AdminTecnico("./Tecnicos.txt");
+            AdminCompu ap = new AdminCompu("./Computadoras.ola");
+            DefaultListModel modelo_comp = (DefaultListModel) lista_comp.getModel();
+            DefaultListModel modelo_tecni = (DefaultListModel) lista_tecnicos.getModel();
+
+            try {
+                ap.cargarArchivo();
+                at.cargarArchivo();
+
+                for (int i = 0; i < ap.getLista().size(); i++) {
+                    modelo_comp.addElement(ap.getLista().get(i));
+                }
+
+                for (int i = 0; i < at.getLista().size(); i++) {
+                    modelo_tecni.addElement(at.getLista().get(i));
+                }
+
+                lista_comp.setModel(modelo_comp);
+                lista_tecnicos.setModel(modelo_tecni);
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
+    }//GEN-LAST:event_jTabbedPane1StateChanged
+
+    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+        // TODO add your handling code here:
+        ventana_ensamblar.pack();
+        ventana_ensamblar.setLocationRelativeTo(null);
+        ventana_ensamblar.setVisible(true);
+        this.setVisible(false);
+        
+    }//GEN-LAST:event_jButton3MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -914,6 +1024,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton elim_tecni;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -940,6 +1051,8 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -953,8 +1066,12 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
+    private javax.swing.JList<String> lista_comp;
+    private javax.swing.JList<String> lista_tecnicos;
     private javax.swing.JButton modi_com;
     private javax.swing.JButton modi_tecni;
     private javax.swing.JTextField nombre_t;
@@ -966,5 +1083,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTextField time_proc;
     private javax.swing.JTextField time_ram;
     private javax.swing.JTextField time_teclado;
+    private javax.swing.JDialog ventana_ensamblar;
     // End of variables declaration//GEN-END:variables
 }

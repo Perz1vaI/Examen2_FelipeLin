@@ -13,15 +13,16 @@ public class Tecnicos {
     private int edad;
     private String nombre;
     private String genero;
-    private int cantidad_compu=0;
+    private int cantidad_compu;
 
     public Tecnicos() {
     }
 
-    public Tecnicos(int edad, String nombre, String genero) {
+    public Tecnicos(int edad, String nombre, String genero,int cantidad_compu) {
         this.edad = edad;
         this.nombre = nombre;
         this.genero = genero;
+        this.cantidad_compu = cantidad_compu;
     }
 
     public int getEdad() {
