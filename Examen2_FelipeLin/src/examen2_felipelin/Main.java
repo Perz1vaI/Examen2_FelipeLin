@@ -41,15 +41,6 @@ public class Main extends javax.swing.JFrame {
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel2 = new javax.swing.JPanel();
         jTabbedPane2 = new javax.swing.JTabbedPane();
-        jPanel5 = new javax.swing.JPanel();
-        jLabel23 = new javax.swing.JLabel();
-        nombre_t = new javax.swing.JTextField();
-        jLabel24 = new javax.swing.JLabel();
-        edad_t = new javax.swing.JSpinner();
-        jLabel25 = new javax.swing.JLabel();
-        rb_1 = new javax.swing.JRadioButton();
-        rb_2 = new javax.swing.JRadioButton();
-        jButton2 = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -102,6 +93,21 @@ public class Main extends javax.swing.JFrame {
         jLabel31 = new javax.swing.JLabel();
         jLabel32 = new javax.swing.JLabel();
         time_pantalla = new javax.swing.JTextField();
+        jPanel5 = new javax.swing.JPanel();
+        jLabel23 = new javax.swing.JLabel();
+        nombre_t = new javax.swing.JTextField();
+        jLabel24 = new javax.swing.JLabel();
+        edad_t = new javax.swing.JSpinner();
+        jLabel25 = new javax.swing.JLabel();
+        rb_1 = new javax.swing.JRadioButton();
+        rb_2 = new javax.swing.JRadioButton();
+        jButton2 = new javax.swing.JButton();
+        jPanel6 = new javax.swing.JPanel();
+        modi_com = new javax.swing.JButton();
+        modi_tecni = new javax.swing.JButton();
+        jPanel7 = new javax.swing.JPanel();
+        elim_tecni = new javax.swing.JButton();
+        elim_com = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -118,83 +124,6 @@ public class Main extends javax.swing.JFrame {
 
         jTabbedPane2.setBackground(new java.awt.Color(102, 102, 102));
         jTabbedPane2.setForeground(new java.awt.Color(255, 255, 255));
-
-        jPanel5.setForeground(new java.awt.Color(153, 153, 153));
-
-        jLabel23.setText("Nombre");
-
-        jLabel24.setText("Edad");
-
-        edad_t.setModel(new javax.swing.SpinnerNumberModel(18, 18, 100, 1));
-
-        jLabel25.setText("Genero");
-
-        buttonGroup1.add(rb_1);
-        rb_1.setSelected(true);
-        rb_1.setText("Masculino");
-
-        buttonGroup1.add(rb_2);
-        rb_2.setText("Femenino");
-
-        jButton2.setText("Crear");
-        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton2MouseClicked(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(nombre_t, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(edad_t)))
-                .addGap(104, 104, 104)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(rb_1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(rb_2)
-                .addContainerGap(297, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(235, 235, 235))
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(nombre_t, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(37, 37, 37)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(edad_t, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(rb_1)
-                            .addComponent(rb_2))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 273, Short.MAX_VALUE)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(109, 109, 109))
-        );
-
-        jTabbedPane2.addTab("Tecnicos", jPanel5);
 
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -334,6 +263,157 @@ public class Main extends javax.swing.JFrame {
 
         jTabbedPane2.addTab("Computadoras", jPanel4);
 
+        jPanel5.setForeground(new java.awt.Color(153, 153, 153));
+
+        jLabel23.setText("Nombre");
+
+        jLabel24.setText("Edad");
+
+        edad_t.setModel(new javax.swing.SpinnerNumberModel(18, 18, 100, 1));
+
+        jLabel25.setText("Genero");
+
+        buttonGroup1.add(rb_1);
+        rb_1.setSelected(true);
+        rb_1.setText("Masculino");
+
+        buttonGroup1.add(rb_2);
+        rb_2.setText("Femenino");
+
+        jButton2.setText("Crear");
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton2MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(nombre_t, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(edad_t)))
+                .addGap(104, 104, 104)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(rb_1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(rb_2)
+                .addContainerGap(297, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(235, 235, 235))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nombre_t, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(37, 37, 37)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(edad_t, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(rb_1)
+                            .addComponent(rb_2))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 273, Short.MAX_VALUE)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(109, 109, 109))
+        );
+
+        jTabbedPane2.addTab("Tecnicos", jPanel5);
+
+        modi_com.setText("Modificar Computadora");
+        modi_com.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                modi_comMouseClicked(evt);
+            }
+        });
+
+        modi_tecni.setText("Modificar Tecnicos");
+        modi_tecni.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                modi_tecniMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(156, 156, 156)
+                .addComponent(modi_com, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 126, Short.MAX_VALUE)
+                .addComponent(modi_tecni, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(124, 124, 124))
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(142, 142, 142)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(modi_com, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(modi_tecni, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(284, Short.MAX_VALUE))
+        );
+
+        jTabbedPane2.addTab("Modificar", jPanel6);
+
+        elim_tecni.setText("Eliminar Tecnicos");
+        elim_tecni.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                elim_tecniMouseClicked(evt);
+            }
+        });
+
+        elim_com.setText("Eliminar Computadora");
+        elim_com.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                elim_comMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGap(156, 156, 156)
+                .addComponent(elim_com, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 126, Short.MAX_VALUE)
+                .addComponent(elim_tecni, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(124, 124, 124))
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGap(142, 142, 142)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(elim_com, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(elim_tecni, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(284, Short.MAX_VALUE))
+        );
+
+        jTabbedPane2.addTab("Eliminar", jPanel7);
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -360,7 +440,7 @@ public class Main extends javax.swing.JFrame {
             .addGap(0, 596, Short.MAX_VALUE)
         );
 
-        jTabbedPane1.addTab("tab2", jPanel3);
+        jTabbedPane1.addTab("Ensamblar", jPanel3);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -407,7 +487,7 @@ public class Main extends javax.swing.JFrame {
         String serie, material;
         String color, teclado_color;
         int year, bateria_horas, proce_nucleos;
-        int time_p,time_r,time_procesador,time_t,time_d,time_b;
+        int time_p, time_r, time_procesador, time_t, time_d, time_b;
         double ram_tam, dd_tam, proce_velocidad;
         AdminCompu ac = new AdminCompu("./Computadoras.ola");
 
@@ -426,6 +506,12 @@ public class Main extends javax.swing.JFrame {
         teclado_mat = comp_mat_teclado.getText();
         teclado_color = comp_color_teclado.getText();
         pantalla_tipo = comp_tipo.getText();
+        time_p = Integer.parseInt(time_pantalla.getText());
+        time_r = Integer.parseInt(time_ram.getText());
+        time_procesador = Integer.parseInt(time_proc.getText());
+        time_t = Integer.parseInt(time_teclado.getText());
+        time_d = Integer.parseInt(time_dd.getText());
+        time_b = Integer.parseInt(time_bate.getText());
 
         if (comp_tactil.getSelectedIndex() == 0) {
             pantalla_tact = "Tactil";
@@ -433,12 +519,12 @@ public class Main extends javax.swing.JFrame {
             pantalla_tact = "No Tactil";
         }
 
-        RAM ram = new RAM(ram_tam, ram_marca);
-        DiscoDuro dd = new DiscoDuro(dd_marca, dd_tam);
-        Bateria bat = new Bateria(bateria_horas, bateria_mat);
-        Teclado tec = new Teclado(teclado_mat, teclado_color);
-        Pantalla pant = new Pantalla(pantalla_tact, pantalla_tipo);
-        Procesador proc = new Procesador(proce_nucleos, proce_velocidad);
+        RAM ram = new RAM(ram_tam, ram_marca, time_r);
+        DiscoDuro dd = new DiscoDuro(dd_marca, dd_tam, time_d);
+        Bateria bat = new Bateria(bateria_horas, bateria_mat, time_b);
+        Teclado tec = new Teclado(teclado_mat, teclado_color, time_t);
+        Pantalla pant = new Pantalla(pantalla_tact, pantalla_tipo, time_p);
+        Procesador proc = new Procesador(proce_nucleos, proce_velocidad, time_procesador);
 
         Computadora x = new Computadora(serie, year, color, material, ram, dd, bat, tec, pant, proc);
         ac.cargarArchivo();
@@ -463,6 +549,12 @@ public class Main extends javax.swing.JFrame {
         comp_color_teclado.setText("");
         comp_tipo.setText("");
         comp_tactil.setSelectedIndex(0);
+        time_pantalla.setText("");
+        time_bate.setText("");
+        time_dd.setText("");
+        time_proc.setText("");
+        time_ram.setText("");
+        time_teclado.setText("");
     }//GEN-LAST:event_jButton1MouseClicked
 
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
@@ -495,6 +587,274 @@ public class Main extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_jButton2MouseClicked
+
+    private void modi_comMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_modi_comMouseClicked
+        // TODO add your handling code here:
+        String cadena = "";
+        AdminCompu ap = new AdminCompu("./Computadoras.ola");
+        String ram_marca, dd_marca, bateria_mat, teclado_mat, pantalla_tact, pantalla_tipo;
+        String serie, material;
+        String color, teclado_color;
+        int year, bateria_horas, proce_nucleos;
+        int time_p, time_r, time_procesador, time_t, time_d, time_b;
+        double ram_tam, dd_tam, proce_velocidad;
+        if (ap.getLista().size() > 0) {
+            ap.cargarArchivo();
+
+            for (Computadora c : ap.getLista()) {
+                cadena += ap.getLista().indexOf(c) + " " + c + "\n";
+            }
+
+            int pos = Integer.parseInt(JOptionPane.showInputDialog(this, cadena + "\nIngrese la posicion que quiere modificar: "));
+
+            if (pos < ap.getLista().size() || pos > -1) {
+
+                int op1 = Integer.parseInt(JOptionPane.showInputDialog(this, "1. Numero de serie\n2. Año\n3. Color\n4. Material"
+                        + "\n5. RAM\n6. Disco Duro\n7. Bateria\n8. Teclado\n9. Pantalla\n10. Procesador"));
+
+                switch (op1) {
+                    case 1: {
+
+                        serie = JOptionPane.showInputDialog(this, "Ingrese la nueva serie: ");
+                        ap.getLista().get(pos).setNumero_serie(serie);
+                        ap.escribirArchivo();
+
+                        break;
+                    }
+                    case 2: {
+                        year = Integer.parseInt(JOptionPane.showInputDialog(this, "Ingrese el nuevo año: "));
+                        ap.getLista().get(pos).setYear(year);
+                        ap.escribirArchivo();
+
+                        break;
+                    }
+                    case 3: {
+                        color = JOptionPane.showInputDialog(this, "Ingrese el nuevo color: ");
+                        ap.getLista().get(pos).setColor(color);
+                        ap.escribirArchivo();
+
+                        break;
+                    }
+                    case 4: {
+                        material = JOptionPane.showInputDialog(this, "Ingrese el nuevo material: ");
+                        ap.getLista().get(pos).setMaterial(material);
+                        ap.escribirArchivo();
+
+                        break;
+                    }
+                    case 5: {
+                        ram_marca = JOptionPane.showInputDialog(this, "Ingrese la nueva marca: ");
+                        ram_tam = Double.parseDouble(JOptionPane.showInputDialog(this, "Ingrese el nuevo tamaño: "));
+                        time_r = Integer.parseInt(JOptionPane.showInputDialog(this, "Ingrese el nuevo tiempo: "));
+
+                        RAM ram = new RAM(ram_tam, ram_marca, time_r);
+                        ap.getLista().get(pos).setRam(ram);
+                        ap.escribirArchivo();
+
+                        break;
+                    }
+                    case 6: {
+                        dd_marca = JOptionPane.showInputDialog(this, "Ingrese la nueva marca: ");
+                        dd_tam = Double.parseDouble(JOptionPane.showInputDialog(this, "Ingrese el nuev tamaño: "));
+                        time_d = Integer.parseInt(JOptionPane.showInputDialog(this, "Ingrese el nuevo tiempo: "));
+
+                        DiscoDuro d = new DiscoDuro(dd_marca, dd_tam, time_d);
+                        ap.getLista().get(pos).setDisco(d);
+                        ap.escribirArchivo();
+
+                        break;
+                    }
+                    case 7: {
+                        bateria_mat = JOptionPane.showInputDialog(this, "Ingrese el nuevo material: ");
+                        bateria_horas = Integer.parseInt(JOptionPane.showInputDialog(this, "Ingrese la nueva hora: "));
+                        time_b = Integer.parseInt(JOptionPane.showInputDialog(this, "Ingrese el nuevo tiempo: "));
+
+                        Bateria b = new Bateria(bateria_horas, bateria_mat, time_b);
+
+                        ap.getLista().get(pos).setBateria(b);
+                        ap.escribirArchivo();
+
+                        break;
+                    }
+                    case 8: {
+                        teclado_color = JOptionPane.showInputDialog(this, "Ingrese el nuevo color: ");
+                        teclado_mat = JOptionPane.showInputDialog(this, "Ingrese el nuevo material: ");
+                        time_t = Integer.parseInt(JOptionPane.showInputDialog(this, "Ingrese el nuevo tiempo: "));
+
+                        Teclado t = new Teclado(teclado_mat, teclado_color, time_t);
+                        ap.getLista().get(pos).setTeclado(t);
+                        ap.escribirArchivo();
+
+                        break;
+                    }
+                    case 9: {
+                        pantalla_tact = JOptionPane.showInputDialog(this, "Ingrese la nueva marca: ");
+                        pantalla_tipo = JOptionPane.showInputDialog(this, "Ingrese la nueva marca: ");
+                        time_p = Integer.parseInt(JOptionPane.showInputDialog(this, "Ingrese el nuevo tiempo: "));
+
+                        Pantalla p = new Pantalla(pantalla_tact, pantalla_tipo, time_p);
+                        ap.getLista().get(pos).setPantalla(p);
+                        ap.escribirArchivo();
+
+                        break;
+                    }
+                    case 10: {
+
+                        time_procesador = Integer.parseInt(JOptionPane.showInputDialog(this, "Ingrese el nuevo tiempo: "));
+                        proce_nucleos = Integer.parseInt(JOptionPane.showInputDialog(this, "Ingrese el nuevo numero de nucelos: "));
+                        proce_velocidad = Double.parseDouble(JOptionPane.showInputDialog(this, "Ingrese la nueva velocidad: "));
+
+                        Procesador pr = new Procesador(proce_nucleos, proce_velocidad, time_procesador);
+                        ap.getLista().get(pos).setProcesador(pr);
+                        ap.escribirArchivo();
+
+                        break;
+                    }
+
+                    default:
+                        JOptionPane.showMessageDialog(this, "No existe esa opcion!");
+                }
+
+            } else {
+                JOptionPane.showMessageDialog(this, "No hay nada en ese indice!");
+
+            }
+
+        } else {
+            JOptionPane.showMessageDialog(this, "No hay computadoras creadas!");
+        }
+    }//GEN-LAST:event_modi_comMouseClicked
+
+    private void modi_tecniMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_modi_tecniMouseClicked
+        // TODO add your handling code here:
+        String cadena = "";
+        String nombre, genero;
+        int edad;
+        AdminTecnico at = new AdminTecnico("./Tecnicos.txt");
+        if (at.getLista().size() > 0) {
+            at.cargarArchivo();
+
+            for (Tecnicos c : at.getLista()) {
+                cadena += at.getLista().indexOf(c) + " " + c + "\n";
+            }
+
+            int pos = Integer.parseInt(JOptionPane.showInputDialog(this, cadena + "\nIngrese la posicion que quiere modificar: "));
+
+            if (pos < at.getLista().size() || pos > -1) {
+
+                int op1 = Integer.parseInt(JOptionPane.showInputDialog(this, "1. Nombre\n2. Edad\n3. Genero"));
+
+                switch (op1) {
+                    case 1: {
+
+                        try {
+                            nombre = JOptionPane.showInputDialog(this, "Ingrese el nuevo nombre: ");
+                            at.getLista().get(pos).setNombre(nombre);
+                            at.escribirArchivo();
+
+                            break;
+                        } catch (IOException ex) {
+                            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+                    }
+                    case 2: {
+
+                        try {
+                            edad = Integer.parseInt(JOptionPane.showInputDialog(this, "Ingrese la nueva edad: "));
+                            at.getLista().get(pos).setEdad(edad);
+                            at.escribirArchivo();
+
+                            break;
+                        } catch (IOException ex) {
+                            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+                    }
+                    case 3: {
+
+                        try {
+                            genero = JOptionPane.showInputDialog(this, "Ingrese el nuevo Genero: ");
+                            at.getLista().get(pos).setGenero(genero);
+                            at.escribirArchivo();
+
+                            break;
+                        } catch (IOException ex) {
+                            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+                    }
+                    default:
+                        JOptionPane.showMessageDialog(this, "No existe esa opcion!");
+
+                }
+
+            } else {
+                JOptionPane.showMessageDialog(this, "No hay nada en ese indice!");
+
+            }
+
+        } else {
+            JOptionPane.showMessageDialog(this, "No hay tecnicos creados!");
+        }
+    }//GEN-LAST:event_modi_tecniMouseClicked
+
+    private void elim_comMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_elim_comMouseClicked
+        // TODO add your handling code here:
+        String cadena = "";
+        AdminCompu ap = new AdminCompu("./Computadoras.ola");
+        if (ap.getLista().size() > 0) {
+            ap.cargarArchivo();
+
+            for (Computadora c : ap.getLista()) {
+                cadena += ap.getLista().indexOf(c) + " " + c + "\n";
+            }
+
+            int pos = Integer.parseInt(JOptionPane.showInputDialog(this, cadena + "\nIngrese la posicion que quiere eliminar: "));
+
+            if (pos < ap.getLista().size() || pos > -1) {
+                ap.getLista().remove(pos);
+                ap.escribirArchivo();
+                JOptionPane.showMessageDialog(this, "Eliminado exitosamente");
+            } else {
+                JOptionPane.showMessageDialog(this, "No hay nada en ese indice!");
+
+            }
+
+        } else {
+            JOptionPane.showMessageDialog(this, "No hay computadoras creadas!");
+        }
+    }//GEN-LAST:event_elim_comMouseClicked
+
+    private void elim_tecniMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_elim_tecniMouseClicked
+        // TODO add your handling code here:
+        String cadena = "";
+        AdminTecnico at = new AdminTecnico("./Tecnicos.txt");
+        if (at.getLista().size() > 0) {
+            at.cargarArchivo();
+
+            for (Tecnicos c : at.getLista()) {
+                cadena += at.getLista().indexOf(c) + " " + c + "\n";
+            }
+
+            int pos = Integer.parseInt(JOptionPane.showInputDialog(this, cadena + "\nIngrese la posicion que quiere eliminar: "));
+
+            if (pos < at.getLista().size() || pos > -1) {
+                try {
+                    at.getLista().remove(pos);
+                    at.escribirArchivo();
+                    JOptionPane.showMessageDialog(this, "Eliminado exitosamente");
+
+                } catch (IOException ex) {
+                    Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
+            } else {
+                JOptionPane.showMessageDialog(this, "No hay nada en ese indice!");
+
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "No hay tecnicos creados!");
+        }
+
+    }//GEN-LAST:event_elim_tecniMouseClicked
 
     /**
      * @param args the command line arguments
@@ -550,6 +910,8 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JSpinner comp_velo;
     private javax.swing.JSpinner comp_year;
     private javax.swing.JSpinner edad_t;
+    private javax.swing.JButton elim_com;
+    private javax.swing.JButton elim_tecni;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
@@ -589,8 +951,12 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
+    private javax.swing.JButton modi_com;
+    private javax.swing.JButton modi_tecni;
     private javax.swing.JTextField nombre_t;
     private javax.swing.JRadioButton rb_1;
     private javax.swing.JRadioButton rb_2;
