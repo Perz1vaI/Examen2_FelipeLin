@@ -9,8 +9,8 @@ import java.awt.Color;
  */
 public class Computadora {
     private String numero_serie;
-    private String year;
-    private Color color;
+    private int year;
+    private String color;
     private String material;
     private RAM ram;
     private DiscoDuro disco;
@@ -22,7 +22,7 @@ public class Computadora {
     public Computadora() {
     }
 
-    public Computadora(String numero_serie, String year, Color color, String material, RAM ram, DiscoDuro disco, Bateria bateria, Teclado teclado, Pantalla pantalla, Procesador procesador) {
+    public Computadora(String numero_serie, int year, String color, String material, RAM ram, DiscoDuro disco, Bateria bateria, Teclado teclado, Pantalla pantalla, Procesador procesador) {
         this.numero_serie = numero_serie;
         this.year = year;
         this.color = color;
@@ -43,19 +43,19 @@ public class Computadora {
         this.numero_serie = numero_serie;
     }
 
-    public String getYear() {
+    public int getYear() {
         return year;
     }
 
-    public void setYear(String year) {
+    public void setYear(int year) {
         this.year = year;
     }
 
-    public Color getColor() {
+    public String getColor() {
         return color;
     }
 
-    public void setColor(Color color) {
+    public void setColor(String color) {
         this.color = color;
     }
 
@@ -117,7 +117,7 @@ public class Computadora {
 
     @Override
     public String toString() {
-        return "Computadora{" + "numero_serie=" + numero_serie + ", year=" + year + ", color=" + color + ", material=" + material + ", ram=" + ram + ", disco=" + disco + ", bateria=" + bateria + ", teclado=" + teclado + ", pantalla=" + pantalla + ", procesador=" + procesador + '}';
+        return "Computadora: "+numero_serie;
     }
     
     

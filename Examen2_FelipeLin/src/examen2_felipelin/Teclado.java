@@ -14,12 +14,12 @@ import java.awt.Color;
 public class Teclado {
 
     private String material;
-    private Color color;
+    private String color;
 
     public Teclado() {
     }
 
-    public Teclado(String material, Color color) {
+    public Teclado(String material, String color) {
         this.material = material;
         this.color = color;
     }
@@ -32,11 +32,11 @@ public class Teclado {
         this.material = material;
     }
 
-    public Color getColor() {
+    public String getColor() {
         return color;
     }
 
-    public void setColor(Color color) {
+    public void setColor(String color) {
         this.color = color;
     }
 
