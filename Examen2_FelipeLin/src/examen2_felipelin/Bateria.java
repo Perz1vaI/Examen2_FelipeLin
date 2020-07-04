@@ -5,14 +5,17 @@
  */
 package examen2_felipelin;
 
+import java.io.Serializable;
+
 /**
  *
  * @author felipelinzhao
  */
-public class Bateria extends Partes{
+public class Bateria extends Partes implements Serializable {
 
     private double horas;
     private String material;
+    private static final long SerialVersionUID = 888l;
 
     public Bateria() {
     }
@@ -27,8 +30,6 @@ public class Bateria extends Partes{
         this.horas = horas;
         this.material = material;
     }
-
-   
 
     public double getHoras() {
         return horas;
@@ -48,7 +49,7 @@ public class Bateria extends Partes{
 
     @Override
     public String toString() {
-        return "Bateria{" + "horas=" + horas + ", material=" + material + '}';
+        return "Bateria";
     }
 
 }

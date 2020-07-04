@@ -5,14 +5,17 @@
  */
 package examen2_felipelin;
 
+import java.io.Serializable;
+
 /**
  *
  * @author felipelinzhao
  */
-public class Pantalla extends Partes {
+public class Pantalla extends Partes implements Serializable {
 
     private String tactil;
     private String tipo;
+    private static final long SerialVersionUID = 999l;
 
     public Pantalla() {
     }
@@ -27,8 +30,6 @@ public class Pantalla extends Partes {
         this.tactil = tactil;
         this.tipo = tipo;
     }
-
-    
 
     public String getTactil() {
         return tactil;
@@ -48,7 +49,7 @@ public class Pantalla extends Partes {
 
     @Override
     public String toString() {
-        return "Pantalla{" + "tactil=" + tactil + ", tipo=" + tipo + '}';
+        return "Pantalla";
     }
 
 }

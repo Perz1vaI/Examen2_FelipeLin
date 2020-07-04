@@ -5,14 +5,18 @@
  */
 package examen2_felipelin;
 
+import java.io.Serializable;
+
 /**
  *
  * @author felipelinzhao
  */
-public class RAM extends Partes{
+public class RAM extends Partes implements Serializable { 
     
     private double size;
     private String marca;
+        private static final long SerialVersionUID = 222l;
+
 
     public RAM() {
     }
@@ -48,7 +52,7 @@ public class RAM extends Partes{
 
     @Override
     public String toString() {
-        return "RAM{" + "size=" + size + ", marca=" + marca + '}';
+        return "RAM" ;
     }
     
     

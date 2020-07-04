@@ -1,13 +1,14 @@
-
 package examen2_felipelin;
 
 import java.awt.Color;
+import java.io.Serializable;
 
 /**
  *
  * @author felipelinzhao
  */
-public class Computadora {
+public class Computadora implements Serializable {
+
     private String numero_serie;
     private int year;
     private String color;
@@ -18,6 +19,7 @@ public class Computadora {
     private Teclado teclado;
     private Pantalla pantalla;
     private Procesador procesador;
+    private static final long SerialVersionUID = 777l;
 
     public Computadora() {
     }
@@ -117,12 +119,7 @@ public class Computadora {
 
     @Override
     public String toString() {
-        return "Computadora: "+numero_serie;
+        return "Computadora: " + numero_serie;
     }
-    
-    
-    
-    
-    
-    
+
 }

@@ -5,14 +5,18 @@
  */
 package examen2_felipelin;
 
+import java.io.Serializable;
+
 /**
  *
  * @author felipelinzhao
  */
-public class Procesador extends Partes{
+public class Procesador extends Partes implements Serializable {
     
     private int nucleos;
     private double velocidad;
+        private static final long SerialVersionUID = 111l;
+
 
     public Procesador() {
     }
@@ -48,7 +52,7 @@ public class Procesador extends Partes{
 
     @Override
     public String toString() {
-        return "Procesador{" + "nucleos=" + nucleos + ", velocidad=" + velocidad + '}';
+        return "Procesador";
     }
     
     

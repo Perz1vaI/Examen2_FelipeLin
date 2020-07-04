@@ -5,14 +5,18 @@
  */
 package examen2_felipelin;
 
+import java.io.Serializable;
+
 /**
  *
  * @author felipelinzhao
  */
-public class DiscoDuro extends Partes {
+public class DiscoDuro extends Partes implements Serializable {
 
     private String marca;
     private double size;
+        private static final long SerialVersionUID = 444l;
+
 
     public DiscoDuro() {
     }
@@ -47,7 +51,7 @@ public class DiscoDuro extends Partes {
 
     @Override
     public String toString() {
-        return "DiscoDuro{" + "marca=" + marca + ", size=" + size + '}';
+        return "Disco Duro";
     }
 
 }

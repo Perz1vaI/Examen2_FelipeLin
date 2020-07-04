@@ -6,10 +6,14 @@
 package examen2_felipelin;
 
 import java.awt.Color;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
+import javax.swing.JList;
 import javax.swing.JOptionPane;
 
 /**
@@ -37,7 +41,6 @@ public class Main extends javax.swing.JFrame {
     private void initComponents() {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
-        ventana_ensamblar = new javax.swing.JDialog();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
@@ -118,17 +121,9 @@ public class Main extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         lista_tecnicos = new javax.swing.JList<>();
         jButton3 = new javax.swing.JButton();
-
-        javax.swing.GroupLayout ventana_ensamblarLayout = new javax.swing.GroupLayout(ventana_ensamblar.getContentPane());
-        ventana_ensamblar.getContentPane().setLayout(ventana_ensamblarLayout);
-        ventana_ensamblarLayout.setHorizontalGroup(
-            ventana_ensamblarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        ventana_ensamblarLayout.setVerticalGroup(
-            ventana_ensamblarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        barra = new javax.swing.JProgressBar();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        tabla = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -142,6 +137,11 @@ public class Main extends javax.swing.JFrame {
         jTabbedPane1.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
                 jTabbedPane1StateChanged(evt);
+            }
+        });
+        jTabbedPane1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTabbedPane1MouseClicked(evt);
             }
         });
 
@@ -239,13 +239,13 @@ public class Main extends javax.swing.JFrame {
         comp_tactil.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Si", "No" }));
         jPanel4.add(comp_tactil, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 410, 89, -1));
 
-        comp_tam_ram.setModel(new javax.swing.SpinnerNumberModel(1.0d, 1.0d, 100.0d, 1.0d));
+        comp_tam_ram.setModel(new javax.swing.SpinnerNumberModel(1.5d, 1.0d, 100.0d, 1.0d));
         jPanel4.add(comp_tam_ram, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 290, 86, -1));
 
-        comp_tam_dd.setModel(new javax.swing.SpinnerNumberModel(1.0d, 1.0d, 100.0d, 1.0d));
+        comp_tam_dd.setModel(new javax.swing.SpinnerNumberModel(1.5d, 1.0d, 100.0d, 1.0d));
         jPanel4.add(comp_tam_dd, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 290, 86, -1));
 
-        comp_velo.setModel(new javax.swing.SpinnerNumberModel(1.0d, 1.0d, 100.0d, 1.0d));
+        comp_velo.setModel(new javax.swing.SpinnerNumberModel(1.5d, 1.0d, 100.0d, 1.0d));
         jPanel4.add(comp_velo, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 280, 70, -1));
 
         comp_nucleos.setModel(new javax.swing.SpinnerNumberModel(1, 1, 100, 1));
@@ -359,7 +359,7 @@ public class Main extends javax.swing.JFrame {
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(rb_1)
                             .addComponent(rb_2))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 273, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 354, Short.MAX_VALUE)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(109, 109, 109))
         );
@@ -398,7 +398,7 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(modi_com, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(modi_tecni, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(284, Short.MAX_VALUE))
+                .addContainerGap(365, Short.MAX_VALUE))
         );
 
         jTabbedPane2.addTab("Modificar", jPanel6);
@@ -435,7 +435,7 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(elim_com, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(elim_tecni, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(284, Short.MAX_VALUE))
+                .addContainerGap(365, Short.MAX_VALUE))
         );
 
         jTabbedPane2.addTab("Eliminar", jPanel7);
@@ -455,17 +455,25 @@ public class Main extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Crear, Modificar Y Eliminar", jPanel2);
 
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         jLabel33.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jLabel33.setText("Computadoras");
+        jPanel3.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, -1, 38));
 
         jLabel34.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jLabel34.setText("Tecnicos");
+        jPanel3.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, 87, 38));
 
         lista_comp.setModel(new DefaultListModel());
         jScrollPane1.setViewportView(lista_comp);
 
+        jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 56, 190, 250));
+
         lista_tecnicos.setModel(new DefaultListModel());
         jScrollPane2.setViewportView(lista_tecnicos);
+
+        jPanel3.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 60, 190, 250));
 
         jButton3.setText("Ensamblar");
         jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -473,43 +481,41 @@ public class Main extends javax.swing.JFrame {
                 jButton3MouseClicked(evt);
             }
         });
+        jPanel3.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 90, 127, 43));
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(101, 101, 101)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 221, Short.MAX_VALUE)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(101, 101, 101))
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(142, 142, 142)
-                .addComponent(jLabel33)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel34, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(149, 149, 149))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(326, 326, 326))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(34, 34, 34)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel34, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(37, 37, 37)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(47, 47, 47)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(101, Short.MAX_VALUE))
-        );
+        barra.setStringPainted(true);
+        jPanel3.add(barra, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 330, 240, 40));
+
+        tabla.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Parte", "Tiempo"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.Integer.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane3.setViewportView(tabla);
+        if (tabla.getColumnModel().getColumnCount() > 0) {
+            tabla.getColumnModel().getColumn(0).setResizable(false);
+            tabla.getColumnModel().getColumn(1).setResizable(false);
+        }
+
+        jPanel3.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 390, 443, 242));
 
         jTabbedPane1.addTab("Ensamblar", jPanel3);
 
@@ -554,78 +560,84 @@ public class Main extends javax.swing.JFrame {
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         // TODO add your handling code here:
-        String ram_marca, dd_marca, bateria_mat, teclado_mat, pantalla_tact = "", pantalla_tipo;
-        String serie, material;
-        String color, teclado_color;
-        int year, bateria_horas, proce_nucleos;
-        int time_p, time_r, time_procesador, time_t, time_d, time_b;
-        double ram_tam, dd_tam, proce_velocidad;
-        AdminCompu ac = new AdminCompu("./Computadoras.ola");
+        try {
+            String ram_marca, dd_marca, bateria_mat, teclado_mat, pantalla_tact = "", pantalla_tipo;
+            String serie, material;
+            String color, teclado_color;
+            int year, bateria_horas, proce_nucleos;
+            int time_p, time_r, time_procesador, time_t, time_d, time_b;
+            double ram_tam, dd_tam, proce_velocidad;
+            AdminCompu ac = new AdminCompu("./Computadoras.ola");
 
-        material = comp_material.getText();
-        color = comp_colo.getText();
-        serie = comp_serie.getText();
-        year = (Integer) comp_year.getValue();
-        bateria_horas = (Integer) comp_horas.getValue();
-        proce_nucleos = (Integer) comp_nucleos.getValue();
-        ram_tam = (Double) comp_tam_ram.getValue();
-        dd_tam = (Double) comp_tam_dd.getValue();
-        proce_velocidad = (Double) comp_velo.getValue();
-        ram_marca = comp_marca_ram.getText();
-        dd_marca = comp_marca_dd.getText();
-        bateria_mat = com_mat_bat.getText();
-        teclado_mat = comp_mat_teclado.getText();
-        teclado_color = comp_color_teclado.getText();
-        pantalla_tipo = comp_tipo.getText();
-        time_p = Integer.parseInt(time_pantalla.getText());
-        time_r = Integer.parseInt(time_ram.getText());
-        time_procesador = Integer.parseInt(time_proc.getText());
-        time_t = Integer.parseInt(time_teclado.getText());
-        time_d = Integer.parseInt(time_dd.getText());
-        time_b = Integer.parseInt(time_bate.getText());
+            material = comp_material.getText();
+            color = comp_colo.getText();
+            serie = comp_serie.getText();
+            year = (Integer) comp_year.getValue();
+            bateria_horas = (Integer) comp_horas.getValue();
+            proce_nucleos = (Integer) comp_nucleos.getValue();
+            ram_tam = (Double) comp_tam_ram.getValue();
+            dd_tam = (Double) comp_tam_dd.getValue();
+            proce_velocidad = (Double) comp_velo.getValue();
+            ram_marca = comp_marca_ram.getText();
+            dd_marca = comp_marca_dd.getText();
+            bateria_mat = com_mat_bat.getText();
+            teclado_mat = comp_mat_teclado.getText();
+            teclado_color = comp_color_teclado.getText();
+            pantalla_tipo = comp_tipo.getText();
+            time_p = Integer.parseInt(time_pantalla.getText());
+            time_r = Integer.parseInt(time_ram.getText());
+            time_procesador = Integer.parseInt(time_proc.getText());
+            time_t = Integer.parseInt(time_teclado.getText());
+            time_d = Integer.parseInt(time_dd.getText());
+            time_b = Integer.parseInt(time_bate.getText());
 
-        if (comp_tactil.getSelectedIndex() == 0) {
-            pantalla_tact = "Tactil";
-        } else {
-            pantalla_tact = "No Tactil";
+            System.out.println(time_b);
+
+            if (comp_tactil.getSelectedIndex() == 0) {
+                pantalla_tact = "Tactil";
+            } else {
+                pantalla_tact = "No Tactil";
+            }
+
+            RAM ram = new RAM(ram_tam, ram_marca, time_r);
+            DiscoDuro dd = new DiscoDuro(dd_marca, dd_tam, time_d);
+            Bateria bat = new Bateria(bateria_horas, bateria_mat, time_b);
+            Teclado tec = new Teclado(teclado_mat, teclado_color, time_t);
+            Pantalla pant = new Pantalla(pantalla_tact, pantalla_tipo, time_p);
+            Procesador proc = new Procesador(proce_nucleos, proce_velocidad, time_procesador);
+
+            Computadora x = new Computadora(serie, year, color, material, ram, dd, bat, tec, pant, proc);
+            ac.cargarArchivo();
+            ac.setComputadora(x);
+            ac.escribirArchivo();
+
+            JOptionPane.showMessageDialog(this, "Computadora creado exitosamente");
+
+            comp_material.setText("");
+            comp_colo.setText("");
+            comp_serie.setText("");
+            comp_year.setValue(2000);
+            comp_horas.setValue(1);
+            comp_nucleos.setValue(1);
+            comp_tam_ram.setValue(1.5);
+            comp_tam_dd.setValue(1.5);
+            comp_velo.setValue(1.5);
+            comp_marca_ram.setText("");
+            comp_marca_dd.setText("");
+            com_mat_bat.setText("");
+            comp_mat_teclado.setText("");
+            comp_color_teclado.setText("");
+            comp_tipo.setText("");
+            comp_tactil.setSelectedIndex(0);
+            time_pantalla.setText("");
+            time_bate.setText("");
+            time_dd.setText("");
+            time_proc.setText("");
+            time_ram.setText("");
+            time_teclado.setText("");
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-
-        RAM ram = new RAM(ram_tam, ram_marca, time_r);
-        DiscoDuro dd = new DiscoDuro(dd_marca, dd_tam, time_d);
-        Bateria bat = new Bateria(bateria_horas, bateria_mat, time_b);
-        Teclado tec = new Teclado(teclado_mat, teclado_color, time_t);
-        Pantalla pant = new Pantalla(pantalla_tact, pantalla_tipo, time_p);
-        Procesador proc = new Procesador(proce_nucleos, proce_velocidad, time_procesador);
-
-        Computadora x = new Computadora(serie, year, color, material, ram, dd, bat, tec, pant, proc);
-        ac.cargarArchivo();
-        ac.getLista().add(x);
-        ac.escribirArchivo();
-
-        JOptionPane.showMessageDialog(this, "Computadora creado exitosamente");
-
-        comp_material.setText("");
-        comp_colo.setText("");
-        comp_serie.setText("");
-        comp_year.setValue(2000);
-        comp_horas.setValue(1);
-        comp_nucleos.setValue(1);
-        comp_tam_ram.setValue(1);
-        comp_tam_dd.setValue(1);
-        comp_velo.setValue(1);
-        comp_marca_ram.setText("");
-        comp_marca_dd.setText("");
-        com_mat_bat.setText("");
-        comp_mat_teclado.setText("");
-        comp_color_teclado.setText("");
-        comp_tipo.setText("");
-        comp_tactil.setSelectedIndex(0);
-        time_pantalla.setText("");
-        time_bate.setText("");
-        time_dd.setText("");
-        time_proc.setText("");
-        time_ram.setText("");
-        time_teclado.setText("");
     }//GEN-LAST:event_jButton1MouseClicked
 
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
@@ -931,17 +943,11 @@ public class Main extends javax.swing.JFrame {
         // TODO add your handling code here:
         if (jTabbedPane1.getSelectedIndex() == 1) {
             AdminTecnico at = new AdminTecnico("./Tecnicos.txt");
-            AdminCompu ap = new AdminCompu("./Computadoras.ola");
             DefaultListModel modelo_comp = (DefaultListModel) lista_comp.getModel();
             DefaultListModel modelo_tecni = (DefaultListModel) lista_tecnicos.getModel();
 
             try {
-                ap.cargarArchivo();
                 at.cargarArchivo();
-
-                for (int i = 0; i < ap.getLista().size(); i++) {
-                    modelo_comp.addElement(ap.getLista().get(i));
-                }
 
                 for (int i = 0; i < at.getLista().size(); i++) {
                     modelo_tecni.addElement(at.getLista().get(i));
@@ -949,6 +955,26 @@ public class Main extends javax.swing.JFrame {
 
                 lista_comp.setModel(modelo_comp);
                 lista_tecnicos.setModel(modelo_tecni);
+                at.escribirArchivo();
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+            try {
+                Computadora temp;
+
+                FileInputStream entrada = new FileInputStream("./Computadoras.ola");
+                ObjectInputStream objeto = new ObjectInputStream(entrada);
+                try {
+                    while ((temp = (Computadora) objeto.readObject()) != null) {
+                        modelo_comp.addElement(temp);
+                    }
+                } catch (Exception e) {
+                }
+                objeto.close();
+                entrada.close();
+                lista_comp.setModel(modelo_comp);
 
             } catch (Exception e) {
                 e.printStackTrace();
@@ -959,12 +985,36 @@ public class Main extends javax.swing.JFrame {
 
     private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
         // TODO add your handling code here:
-        ventana_ensamblar.pack();
-        ventana_ensamblar.setLocationRelativeTo(null);
-        ventana_ensamblar.setVisible(true);
-        this.setVisible(false);
+        AdminCompu ap = new AdminCompu("./Computadoras.ola");
+        AdminTecnico at = new AdminTecnico("./Tecnicos.txt");
+        ap.cargarArchivo();
+        at.cargarArchivo();
         
+        if (lista_comp.isSelectionEmpty() || lista_tecnicos.isSelectionEmpty()) {
+            JOptionPane.showMessageDialog(this, "No tiene seleccionado nada");
+
+        } else {
+            ArrayList<Partes> lista = new ArrayList();
+            OrdenDeEnsamblaje o = new OrdenDeEnsamblaje(ap.getLista().get(lista_comp.getSelectedIndex()), at.getLista().get(lista_tecnicos.getSelectedIndex()));
+            int cont = at.getLista().get(lista_tecnicos.getSelectedIndex()).getCantidad_compu();
+            lista.add(o.getCompu().getRam());
+            lista.add(o.getCompu().getDisco());
+            lista.add(o.getCompu().getBateria());
+            lista.add(o.getCompu().getTeclado());
+            lista.add(o.getCompu().getPantalla());
+            lista.add(o.getCompu().getProcesador());
+            HiloEnsamblar he = new HiloEnsamblar(o, tabla, barra, lista);
+            he.start();
+            cont++;
+            at.getLista().get(lista_tecnicos.getSelectedIndex()).setCantidad_compu(cont);
+        }
+
     }//GEN-LAST:event_jButton3MouseClicked
+
+    private void jTabbedPane1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTabbedPane1MouseClicked
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_jTabbedPane1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -1002,6 +1052,7 @@ public class Main extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JProgressBar barra;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JTextField com_mat_bat;
     private javax.swing.JTextField comp_colo;
@@ -1068,6 +1119,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JList<String> lista_comp;
@@ -1077,12 +1129,12 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTextField nombre_t;
     private javax.swing.JRadioButton rb_1;
     private javax.swing.JRadioButton rb_2;
+    private javax.swing.JTable tabla;
     private javax.swing.JTextField time_bate;
     private javax.swing.JTextField time_dd;
     private javax.swing.JTextField time_pantalla;
     private javax.swing.JTextField time_proc;
     private javax.swing.JTextField time_ram;
     private javax.swing.JTextField time_teclado;
-    private javax.swing.JDialog ventana_ensamblar;
     // End of variables declaration//GEN-END:variables
 }
